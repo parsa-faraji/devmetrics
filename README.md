@@ -1,8 +1,8 @@
 <div align="center">
 
-![DevMetrics](https://socialify.git.ci/parsa-faraji/devmetrics/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark)
+![Header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,1,4&height=200&section=header&text=DevMetrics&fontSize=50&fontAlignY=35&desc=GitHub%20Analytics%20Dashboard&descAlignY=55&animation=twinkling)
 
-# DevMetrics
+
 
 A beautiful GitHub analytics dashboard. Enter any username and get instant insights.
 
