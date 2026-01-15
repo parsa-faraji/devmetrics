@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevMetrics - GitHub Analytics Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>DevMetrics</h1>
+            <p>GitHub Analytics Dashboard</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="username" placeholder="Enter GitHub username" autocomplete="off">
+                <button id="analyze" class="btn btn-primary">Analyze</button>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <img id="avatar" class="avatar" src="" alt="Avatar">
+                <div class="profile-info">
+                    <h2 id="name">-</h2>
+                    <p id="login" class="username">@-</p>
+                    <p id="bio" class="bio">-</p>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <span class="stat-num" id="followers">0</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-num" id="following">0</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-num" id="publicRepos">0</span>
+                            <span class="stat-label">Repos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="totalStars">0</span>
+                        <span class="stat-label">Total Stars</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🍴</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="totalForks">0</span>
+                        <span class="stat-label">Total Forks</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="totalCommits">-</span>
+                        <span class="stat-label">This Year</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="avgRepoSize">0</span>
+                        <span class="stat-label">Avg Repo Size</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Breakdown -->
+            <div class="card languages-card">
+                <h3>Languages</h3>
+                <div class="language-bar" id="languageBar"></div>
+                <div class="language-legend" id="languageLegend"></div>
+            </div>
+
+            <!-- Top Repos -->
+            <div class="card repos-card">
+                <h3>Top Repositories</h3>
+                <div class="repos-list" id="reposList"></div>
+            </div>
+
+            <!-- Activity Insights -->
+            <div class="card insights-card">
+                <h3>Insights</h3>
+                <div class="insights" id="insights"></div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing profile...</p>
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <p id="errorMsg">User not found</p>
+            <button class="btn btn-secondary" onclick="document.getElementById('error').style.display='none'">Try Again</button>
+        </div>
+
+        <footer class="footer">
+            <p>Built by <a href="https://github.com/parsa-faraji" target="_blank">Parsa Faraji Alamouti</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
