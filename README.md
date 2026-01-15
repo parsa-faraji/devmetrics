@@ -1,17 +1,14 @@
+<div align="center">
+
+![DevMetrics](https://socialify.git.ci/parsa-faraji/devmetrics/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark)
+
 # DevMetrics
 
 A beautiful GitHub analytics dashboard. Enter any username and get instant insights.
 
-![DevMetrics](https://img.shields.io/badge/GitHub-Analytics-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
-
-<div align="center">
-
-## Demo
-
-![DevMetrics Dashboard](https://via.placeholder.com/800x500/0d1117/58a6ff?text=DevMetrics+Dashboard)
-
-**[Live Demo](https://parsa-faraji.github.io/devmetrics)** | **[Try with your username](https://parsa-faraji.github.io/devmetrics?user=parsa-faraji)**
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=github)](https://parsa-faraji.github.io/devmetrics)
+[![Try It](https://img.shields.io/badge/Try%20It-parsa--faraji-purple?style=for-the-badge&logo=github)](https://parsa-faraji.github.io/devmetrics?user=parsa-faraji)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 </div>
 
