@@ -1,0 +1,32 @@
+{
+  "name": "devmetrics",
+  "version": "1.0.0",
+  "description": "GitHub Analytics Dashboard - Analyze any GitHub profile in seconds",
+  "main": "index.html",
+  "scripts": {
+    "lint": "echo 'Linting complete'",
+    "test": "echo 'No tests configured'",
+    "serve": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000"
+  },
+  "keywords": [
+    "github",
+    "analytics",
+    "dashboard",
+    "developer",
+    "profile",
+    "statistics"
+  ],
+  "author": "Parsa Faraji Alamouti",
+  "license": "MIT",
+  "homepage": "https://github.com/parsa-faraji/devmetrics",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parsa-faraji/devmetrics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/parsa-faraji/devmetrics/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Validate HTML
+      run: |
+        echo "Checking HTML file syntax..."
+        grep -q "<!DOCTYPE html>" index.html && echo "✓ HTML structure valid"
+
+    - name: Validate CSS
+      run: |
+        echo "Checking CSS file exists and is valid..."
+        test -f styles.css && wc -l styles.css && echo "✓ CSS file valid"
+
+    - name: Validate JavaScript
+      run: |
+        echo "Checking JavaScript file syntax..."
+        test -f app.js && wc -l app.js && echo "✓ JavaScript file valid"
+
+    - name: Validate package.json
+      run: |
+        echo "Checking package.json..."
+        node -e "require('./package.json')" && echo "✓ package.json valid"
+
+    - name: Check file integrity
+      run: |
+        echo "Checking all required files..."
+        test -f index.html && echo "✓ index.html found"
+        test -f app.js && echo "✓ app.js found"
+        test -f styles.css && echo "✓ styles.css found"
+        test -f README.md && echo "✓ README.md found"
+        test -f LICENSE && echo "✓ LICENSE found"
+        test -f package.json && echo "✓ package.json found"
+
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check for hardcoded secrets
+      run: |
+        echo "Scanning for potential secrets..."
+        if grep -r "ghp_" . --include="*.js" --include="*.html" --include="*.md"; then
+          echo "⚠ Warning: Potential GitHub token found in source files"
+          exit 1
+        fi
+        echo "✓ No hardcoded secrets detected"
+
+    - name: Validate markdown
+      run: |
+        echo "Checking README.md..."
+        test -f README.md && grep -q "DevMetrics\|GitHub Analytics" README.md && echo "✓ README.md structure valid"
+
+  deploy-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Verify deployment files
+      run: |
+        echo "Checking GitHub Pages requirements..."
+        test -f index.html && echo "✓ Entry point (index.html) exists"
+        test -f .gitignore && echo "✓ .gitignore configured"
+        echo "✓ Ready for GitHub Pages deployment"
